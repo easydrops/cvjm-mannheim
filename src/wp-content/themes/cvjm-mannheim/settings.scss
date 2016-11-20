@@ -1,0 +1,15 @@
+$skin: #f3bba1;
+$light-skin: #f6ccb3;
+$dark-skin: #F68D7C;
+
+body {
+  background: $skin;
+  color: black;
+  font-family: Arial;
+
+  .box {
+    box-shadow: 0px 3px 13px -2px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    background: $light-skin;
+  }
+}
