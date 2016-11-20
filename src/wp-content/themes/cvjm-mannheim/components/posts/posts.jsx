@@ -1,11 +1,10 @@
 "use strict";
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import classNames from 'classnames';
 
-class Posts extends React.Component {
+export default class Posts extends React.Component {
 
  constructor(props, context) {
     super(props, context);
@@ -39,7 +38,6 @@ class Posts extends React.Component {
 
 class Post extends React.Component {
 
-
   constructor(props, context) {
     super(props, context);
 
@@ -66,7 +64,3 @@ class Post extends React.Component {
     this.setState({ isActive: active });
   }
 }
-
-window.addEventListener('DOMContentLoaded', ()=> { 
-  ReactDOM.render(<Posts/>, document.getElementById('main-content'));
-});

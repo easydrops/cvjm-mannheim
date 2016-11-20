@@ -63,7 +63,7 @@
 /******/ 	}
 
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f58f8033cd377b4fcd05"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ced60c30838ddddf69f1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 
@@ -10166,12 +10166,11 @@
 
 
 /***/ },
-/* 83 */
+/* 83 */,
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	'use strict';
 
 	var _react = __webpack_require__(191);
 
@@ -10181,116 +10180,20 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _jquery = __webpack_require__(104);
+	var _Layout = __webpack_require__(201);
 
-	var _jquery2 = _interopRequireDefault(_jquery);
+	var _Layout2 = _interopRequireDefault(_Layout);
 
-	var _classnames = __webpack_require__(85);
+	var _Posts = __webpack_require__(197);
 
-	var _classnames2 = _interopRequireDefault(_classnames);
+	var _Posts2 = _interopRequireDefault(_Posts);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Posts = function (_React$Component) {
-	  _inherits(Posts, _React$Component);
-
-	  function Posts(props, context) {
-	    _classCallCheck(this, Posts);
-
-	    var _this = _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).call(this, props, context));
-
-	    _this.state = {
-	      posts: []
-	    };
-	    return _this;
-	  }
-
-	  _createClass(Posts, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      var state = this;
-	      _jquery2.default.ajax('wp-json/wp/v2/posts').done(function (data) {
-	        state.setState({ posts: data });
-	      }).fail(function () {
-	        console.log('something went horribly wrong');
-	      });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var posts = this.state.posts;
-	      //console.log(posts);
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'post-wrapper' },
-	        posts.map(function (post) {
-	          return _react2.default.createElement(Post, { post: post, key: post.id });
-	        })
-	      );
-	    }
-	  }]);
-
-	  return Posts;
-	}(_react2.default.Component);
-
-	var Post = function (_React$Component2) {
-	  _inherits(Post, _React$Component2);
-
-	  function Post(props, context) {
-	    _classCallCheck(this, Post);
-
-	    var _this2 = _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props, context));
-
-	    _this2.state = {
-	      isActive: _this2.props.active
-	    };
-	    return _this2;
-	  }
-
-	  _createClass(Post, [{
-	    key: 'render',
-	    value: function render() {
-	      var _props$post = this.props.post,
-	          title = _props$post.title,
-	          content = _props$post.content;
-
-	      var classes = (0, _classnames2.default)('box', 'post', this.state.isActive && 'active');
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: classes },
-	        _react2.default.createElement(
-	          'h3',
-	          { className: 'post__title' },
-	          title.rendered
-	        ),
-	        _react2.default.createElement('div', { className: 'post__content', dangerouslySetInnerHTML: { __html: content.rendered } }),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.handleClick.bind(this) },
-	          'Click for Color'
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      var active = !this.state.isActive;
-	      this.setState({ isActive: active });
-	    }
-	  }]);
-
-	  return Post;
-	}(_react2.default.Component);
+	var app = document.getElementById('main-content');
 
 	window.addEventListener('DOMContentLoaded', function () {
-	  _reactDom2.default.render(_react2.default.createElement(Posts, null), document.getElementById('main-content'));
+	  _reactDom2.default.render(_react2.default.createElement(_Layout2.default, null), app);
 	});
 	;
 
@@ -10299,31 +10202,7 @@
 	    return;
 	  }
 
-	  __REACT_HOT_LOADER__.register(Posts, 'Posts', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/posts/posts.jsx');
-
-	  __REACT_HOT_LOADER__.register(Post, 'Post', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/posts/posts.jsx');
-	}();
-
-	;
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _posts = __webpack_require__(83);
-
-	var _posts2 = _interopRequireDefault(_posts);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	;
-
-	var _temp = function () {
-	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-	    return;
-	  }
+	  __REACT_HOT_LOADER__.register(app, 'app', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/main.js');
 	}();
 
 	;
@@ -33656,6 +33535,368 @@
 		return module;
 	}
 
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(191);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _jquery = __webpack_require__(104);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	var _classnames = __webpack_require__(85);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Posts = function (_React$Component) {
+	  _inherits(Posts, _React$Component);
+
+	  function Posts(props, context) {
+	    _classCallCheck(this, Posts);
+
+	    var _this = _possibleConstructorReturn(this, (Posts.__proto__ || Object.getPrototypeOf(Posts)).call(this, props, context));
+
+	    _this.state = {
+	      posts: []
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Posts, [{
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
+	      var state = this;
+	      _jquery2.default.ajax('wp-json/wp/v2/posts').done(function (data) {
+	        state.setState({ posts: data });
+	      }).fail(function () {
+	        console.log('something went horribly wrong');
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var posts = this.state.posts;
+	      //console.log(posts);
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'post-wrapper' },
+	        posts.map(function (post) {
+	          return _react2.default.createElement(Post, { post: post, key: post.id });
+	        })
+	      );
+	    }
+	  }]);
+
+	  return Posts;
+	}(_react2.default.Component);
+
+	var _default = Posts;
+	exports.default = _default;
+
+	var Post = function (_React$Component2) {
+	  _inherits(Post, _React$Component2);
+
+	  function Post(props, context) {
+	    _classCallCheck(this, Post);
+
+	    var _this2 = _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props, context));
+
+	    _this2.state = {
+	      isActive: _this2.props.active
+	    };
+	    return _this2;
+	  }
+
+	  _createClass(Post, [{
+	    key: 'render',
+	    value: function render() {
+	      var _props$post = this.props.post,
+	          title = _props$post.title,
+	          content = _props$post.content;
+
+	      var classes = (0, _classnames2.default)('box', 'post', this.state.isActive && 'active');
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes },
+	        _react2.default.createElement(
+	          'h3',
+	          { className: 'post__title' },
+	          title.rendered
+	        ),
+	        _react2.default.createElement('div', { className: 'post__content', dangerouslySetInnerHTML: { __html: content.rendered } }),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.handleClick.bind(this) },
+	          'Click for Color'
+	        )
+	      );
+	    }
+	  }, {
+	    key: 'handleClick',
+	    value: function handleClick() {
+	      var active = !this.state.isActive;
+	      this.setState({ isActive: active });
+	    }
+	  }]);
+
+	  return Post;
+	}(_react2.default.Component);
+
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(Posts, 'Posts', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/posts/Posts.jsx');
+
+	  __REACT_HOT_LOADER__.register(Post, 'Post', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/posts/Posts.jsx');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/posts/Posts.jsx');
+	}();
+
+	;
+
+/***/ },
+/* 198 */,
+/* 199 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(191);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+
+	  function Header() {
+	    _classCallCheck(this, Header);
+
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+	  }
+
+	  _createClass(Header, [{
+	    key: "render",
+	    value: function render() {
+
+	      console.log(this.props);
+	      return _react2.default.createElement(
+	        "header",
+	        { className: "header" },
+	        this.props.title
+	      );
+	    }
+	  }]);
+
+	  return Header;
+	}(_react2.default.Component);
+
+	var _default = Header;
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(Header, "Header", "/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/header/Header.jsx");
+
+	  __REACT_HOT_LOADER__.register(_default, "default", "/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/header/Header.jsx");
+	}();
+
+	;
+
+/***/ },
+/* 200 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(191);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Footer = function (_React$Component) {
+	  _inherits(Footer, _React$Component);
+
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+	  }
+
+	  _createClass(Footer, [{
+	    key: "render",
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        "footer",
+	        { className: "footer" },
+	        "Footer"
+	      );
+	    }
+	  }]);
+
+	  return Footer;
+	}(_react2.default.Component);
+
+	var _default = Footer;
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(Footer, "Footer", "/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/footer/Footer.jsx");
+
+	  __REACT_HOT_LOADER__.register(_default, "default", "/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/components/footer/Footer.jsx");
+	}();
+
+	;
+
+/***/ },
+/* 201 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(191);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Footer = __webpack_require__(200);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	var _Header = __webpack_require__(199);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Layout = function (_React$Component) {
+	  _inherits(Layout, _React$Component);
+
+	  function Layout() {
+	    _classCallCheck(this, Layout);
+
+	    var _this = _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).call(this));
+
+	    _this.state = {
+	      title: "Hello"
+	    };
+	    return _this;
+	  }
+
+	  _createClass(Layout, [{
+	    key: 'clickHandle',
+	    value: function clickHandle() {
+	      this.setState({
+	        title: "Mkay"
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'page-wrapper' },
+	        _react2.default.createElement(_Header2.default, { title: this.state.title }),
+	        _react2.default.createElement(_Footer2.default, null),
+	        _react2.default.createElement(
+	          'button',
+	          { onClick: this.clickHandle.bind(this) },
+	          'Click me'
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Layout;
+	}(_react2.default.Component);
+
+	var _default = Layout;
+	exports.default = _default;
+	;
+
+	var _temp = function () {
+	  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+	    return;
+	  }
+
+	  __REACT_HOT_LOADER__.register(Layout, 'Layout', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/pages/Layout.jsx');
+
+	  __REACT_HOT_LOADER__.register(_default, 'default', '/Users/jhoydem/Sites/cvjm-mannheim.dev/src/wp-content/themes/cvjm-mannheim/pages/Layout.jsx');
+	}();
+
+	;
 
 /***/ }
 /******/ ]);
