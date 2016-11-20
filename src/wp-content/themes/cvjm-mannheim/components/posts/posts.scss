@@ -1,0 +1,25 @@
+.post-wrapper {
+}
+
+.post {
+  margin-bottom: 20px;
+  width: 500px;
+  transform: scale(1);
+  transform-origin: left;
+  transition: transform 0.5s ease, background 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &.active {
+    background: $dark-skin;
+  }
+}
+
+.post__title {
+  font-size: 1em;
+}
+
+.post__content {
+}
