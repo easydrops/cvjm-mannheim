@@ -2,6 +2,9 @@ $skin: #f3bba1;
 $light-skin: #f6ccb3;
 $dark-skin: #F68D7C;
 
+$black: #000;
+$dark-gray: #4d4d4d;
+
 body {
   background: $skin;
   color: black;
@@ -12,4 +15,13 @@ body {
     padding: 15px;
     background: $light-skin;
   }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+   &:hover {
+    color: $dark-gray;
+   }
 }
