@@ -7,26 +7,17 @@ export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "Hello",
+      title: "Posts"
     }
   }
-
-
-  clickHandle() {
-    this.setState({
-      title: "Mkay"
-    });
-  }
-
 
   render() {
     return (
 
       <div className="page-wrapper">
         <Header title={this.state.title} />
-
+          {this.props.children}
         <Footer/>
-        <button onClick={this.clickHandle.bind(this)}>Click me</button>
       </div>
     );
   }

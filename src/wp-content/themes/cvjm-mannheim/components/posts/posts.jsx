@@ -48,13 +48,12 @@ class Post extends React.Component {
 
   render() {
     var { title, content} = this.props.post;
-    var classes = classNames('box', 'post', this.state.isActive && 'active');
+    var classes = classNames('box', 'post', this.state.isActive && 'is-active');
 
     return (
-      <div className={classes}>
+      <div onClick={this.handleClick.bind(this)} className={classes}>
         <h3 className="post__title">{title.rendered}</h3>
         <div className="post__content" dangerouslySetInnerHTML={ {__html: content.rendered}} ></div>
-        <button onClick={this.handleClick.bind(this)}>Click for Color</button>
       </div>
     );
   }

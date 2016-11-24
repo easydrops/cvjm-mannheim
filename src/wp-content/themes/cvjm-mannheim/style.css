@@ -1,10 +1,16 @@
 /*
   Theme Name: React Theme
 */
+html {
+  background: #f6c0a0; }
+
 body {
+  min-height: 100vh;
+  position: relative;
   background: #f3bba1;
   color: black;
-  font-family: Arial; }
+  font-family: Arial;
+  margin: 0; }
   body .box {
     box-shadow: 0px 3px 13px -2px rgba(0, 0, 0, 0.5);
     padding: 15px;
@@ -16,24 +22,56 @@ a {
   a:hover {
     color: #4d4d4d; }
 
+.post-wrapper {
+  display: flex;
+  padding: 0 15px;
+  flex-flow: row wrap;
+  justify-content: space-between; }
+
 .post {
-  margin-bottom: 20px;
-  width: 500px;
   transform: scale(1);
-  transform-origin: left;
-  transition: transform 0.5s ease, background 0.5s ease; }
+  transform-origin: center;
+  transition: transform 0.5s ease, background 0.5s ease;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  flex: 1 auto;
+  flex-basis: 300px; }
   .post:hover {
-    transform: scale(1.1); }
-  .post.active {
+    transform: scale(1.05);
+    z-index: 2; }
+  .post.is-active {
     background: #F68D7C; }
 
 .post__title {
   font-size: 1em; }
 
-.header li {
-  list-style: none;
-  display: inline-block;
-  margin-right: 15px; }
+.main {
+  flex: 2 0px; }
 
-.header a.is-active {
-  color: green; }
+.aside-1 {
+  order: 1; }
+
+.main {
+  order: 2; }
+
+.aside-2 {
+  order: 3; }
+
+.footer {
+  order: 4; }
+
+.header {
+  padding: 0 30px; }
+  .header ul {
+    padding: 0; }
+  .header li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 15px; }
+  .header a.is-active {
+    color: green; }
+
+.footer {
+  padding: 10px;
+  background: white; }

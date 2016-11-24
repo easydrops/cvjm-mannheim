@@ -1,18 +1,29 @@
 .post-wrapper {
+  display: flex;
+  padding: 0 15px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+
 }
 
 .post {
-  margin-bottom: 20px;
-  width: 500px;
   transform: scale(1);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.5s ease, background 0.5s ease;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  flex: 1 auto;
+  flex-basis: 300px;
+
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    z-index: 2;
   }
 
-  &.active {
+  &.is-active {
     background: $dark-skin;
   }
 }
@@ -23,3 +34,10 @@
 
 .post__content {
 }
+
+.main { flex: 2 0px; }
+
+.aside-1 { order: 1; }
+.main    { order: 2; }
+.aside-2 { order: 3; }
+.footer  { order: 4; }

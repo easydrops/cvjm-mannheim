@@ -7,7 +7,7 @@ export default class Service extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "Hello",
+      title: "Service",
     }
   }
 

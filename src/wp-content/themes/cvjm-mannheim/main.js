@@ -19,8 +19,8 @@ window.addEventListener('DOMContentLoaded', ()=> {
     <Router history={hashHistory}>
       <Route path="/" component={Layout}>
         <IndexRoute component={Featured}/>
-        <Route path="angebote" activeClassName="is-active" component={Service}/>
-        <Route path="ueber-uns" activeClassName="is-active" component={About}/>
       </Route>
+      <Route path="angebote" activeClassName="is-active" component={Service}/>
+      <Route path="ueber-uns" activeClassName="is-active" component={About}/>
     </Router>, app);
 });

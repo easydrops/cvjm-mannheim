@@ -1,26 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Icons from '../Icons/Icons.jsx';
+import Menu from '../menu/Menu.jsx';
 
 export default class Header extends React.Component {
 
   render() {
-
-    {console.log(this.props.children)}
     return (
       <header className="header">
-        <ul>
-          <li>
-            <Link to="/" activeClassName="is-active">Home</Link>
-          </li>
-          <li>
-            <Link to="ueber-uns" activeClassName="is-active">Über Uns</Link>
-          </li>
-          <li>
-            <Link to="angebote" activeClassName="is-active">Angebote</Link>
-          </li>
-        </ul>
-        {this.props.children}
+        Logoalksdjals
+        <Menu/>
         <h1>{this.props.title}</h1>
+        <Icons glyph="#icon-close"/>
+        <Icons glyph="#icon-menu"/>
       </header>
     );
   }

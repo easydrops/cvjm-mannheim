@@ -7,7 +7,7 @@ export default class About extends React.Component {
   constructor() {
     super();
     this.state = {
-      title: "Hello",
+      title: "YO",
     }
   }
 
@@ -25,8 +25,8 @@ export default class About extends React.Component {
       <div className="page-wrapper">
         <Header title={this.state.title} />
         About / Über Uns
-        <Footer/>
         <button onClick={this.clickHandle.bind(this)}>Click me</button>
+        <Footer/>
       </div>
     );
   }

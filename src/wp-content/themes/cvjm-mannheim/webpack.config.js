@@ -14,7 +14,8 @@ module.exports = {
   entry: [
     `webpack-hot-middleware/client?http://${HOST}:${PORT}&reload=true`,
     './main.js', // Your appʼs entry point
-    './main.scss'
+    './main.scss',
+    './icons.js'
   ],
   output: {
     path: __dirname,
@@ -31,8 +32,15 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-            test: /\.scss$/,
-            loader: ExtractTextPlugin.extract('css!sass')
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css!sass')
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-sprite?' + JSON.stringify({
+          name: '[name]',
+          prefixize: true
+        })
       }
     ]
   },
